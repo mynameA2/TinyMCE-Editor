@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/main.js',
@@ -21,6 +22,14 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        // Копирование HTML файла из корня проекта в папку dist
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'index.html', to: 'index.html' },  // Путь к HTML в корне, куда его копировать в dist
+            ],
+        }),
+      ],
     devtool: 'source-map',
     devServer: {
         static: {

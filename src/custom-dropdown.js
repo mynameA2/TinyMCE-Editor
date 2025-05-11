@@ -24,14 +24,6 @@ class CustomDropdown extends HTMLElement {
                     this.selected = parseInt(e.currentTarget.value);
                     this.render();
                 });
-                // Обработка события mousedown
-                // select.addEventListener('mousedown', (e) => {
-                //     // Программно устанавливаем фокус на выбранный элемент
-                //     const selectedOption = select.querySelector(`option[value="${this.selected}"]`);
-                //     if (selectedOption) {
-                //         selectedOption.focus();  // Устанавливаем фокус на выбранный элемент
-                //     }
-                // });
             }
         });
 
