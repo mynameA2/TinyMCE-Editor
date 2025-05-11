@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TinyMCE Editor</title>
+    <script
+      src="https://cdn.tiny.cloud/1/am0sir4ivnb31cam2z8056f0nuqhfwe0rz1r1vysbcycyiwe/tinymce/7/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <script type="module" src="./src/main.js"></script>
+    <style>
+      body {
+        background-color: #4a4848;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        margin: 0;
+        padding: 16px;
+        font-family: sans-serif;
+      }
+      #editor-panel {
+        flex: 1;
+        border: 2px solid #000;
+      }
+      #insert-button {
+        margin: 10px;
+        background-color: greenyellow;
+      }
+      #editor {
+        min-height: 200px;
+        padding: 8px;
+        margin-top: 10px;
+        background-color: #282828;
+        color: #9f9c9c;
+      }
+      #template-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 300px;
+        border: 2px solid #000;
+        padding: 16px;
+        color: #9f9c9c;
+      }
+      #templates-list {
+        display: block;
+        border: 1px solid #000;
+        background-color: #282828;
+      }
+      #template-edit {
+        margin-bottom: 4px;
+        background-color: #282828;
+        color: #9f9c9c;
+        font-size: medium;
+      }
+      .template-item {
+        cursor: pointer;
+        padding: 4px;
+      }
+      .template-item.selected {
+        background-color: #4a4848;
+      }
+      #add-template {
+        background-color: greenyellow;
+      }
+      #remove-template {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="editor-panel">
+      <button id="insert-button">Insert</button>
+      <div id="editor" contenteditable="true"></div>
+    </div>
+    <div id="template-panel">
+      <h3>Templates</h3>
+      <div id="templates-list"></div>
+      <div>
+        <button id="add-template">+</button>
+        <button id="remove-template">-</button>
+      </div>
+      <h3>Edit template</h3>
+      <input id="template-edit" type="text" />
+    </div>
+  </body>
+</html>
